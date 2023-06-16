@@ -8,7 +8,7 @@ Idea and pieces of code from http://www.tecmint.com/linux-server-health-monitori
 **/
 
 error_reporting(0);
-$netint = "venet0"; // network interface
+$netint = _exec("netstat -i | head -n 3 | tail -n 1 | cut -d ' ' -f1"); // get main network interface
 $debug  = true; // let it be :)
 $output = "";
 
